@@ -5,7 +5,7 @@ The site updates itself from this repo, the same way the Raavanaa Bowling site d
 `public/.updater/update.php` runs from cPanel cron every 5 minutes, and when `main` has a new commit it copies `public/` onto the site.
 Files removed from `public/` are removed from the server too. Its log is `public_html/.updater/log.txt`.
 
-- `src/page.html` is the page source. `python3 src/build.py` turns it into `public/index.html` (the workflow runs this too).
+- `src/page.html` is the page source. `python3 src/build.py` turns it into `public/index.html` (run it before committing; the server uses `public/index.html` as it is).
 - `public/contact.php` emails contact-form enquiries to info@otonus.ai.
 - `public/.htaccess` forces https://otonus.ai (no www) and sets caching.
 

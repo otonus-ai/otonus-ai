@@ -4,7 +4,7 @@
 // the repo and copies public/ over the site folder, and removes files that the
 // previous update put there but the new commit no longer has.
 // Cron command (cPanel, every 5 minutes): php -q /home/CPANELUSER/public_html/.updater/update.php
-const REPO = 'Raavanaapost/otonus-site';
+const REPO = 'otonus-ai/otonus-ai';
 const BRANCH = 'main';
 
 if (PHP_SAPI !== 'cli') { http_response_code(404); exit; }

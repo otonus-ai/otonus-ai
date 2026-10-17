@@ -68,7 +68,12 @@ p { margin: 0; }
 .phonebar i { width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; box-shadow: 0 0 0 3px rgba(125,211,252,.9), 0 0 16px rgba(56,189,248,.9) inset; }
 .phonebar svg, .navcall svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linejoin: round; }
 .phonebar svg { width: 26px; height: 26px; }
-.phonebar.consult { font-size: clamp(22px, 3vw, 32px); position: relative; z-index: 1; }
+.phonebar.consult { font-size: clamp(20px, 2.4vw, 26px); position: relative; z-index: 1; padding: 10px 34px 10px 10px; border-radius: 999px; clip-path: none;
+  background: linear-gradient(100deg, #ff7a18, #ff4d6d 60%, #e0218a); filter: none; box-shadow: 0 10px 28px -8px rgba(255,77,109,.65), inset 0 1px 0 rgba(255,255,255,.35); transition: transform .2s, box-shadow .2s; }
+.phonebar.consult:hover { transform: translateY(-2px); filter: none; box-shadow: 0 16px 34px -8px rgba(255,77,109,.8), inset 0 1px 0 rgba(255,255,255,.35); }
+.phonebar.consult i { background: #fff; color: #ff4d6d; box-shadow: none; }
+.phonebar.consult i::after { border-color: #fff; }
+.phone-line:has(.consult)::before, .phone-line:has(.consult)::after { display: none; }
 .phone-line:has(.consult) { width: min(920px, 100%); }
 .phonebar i { position: relative; }
 .phonebar.consult i::after { content: ""; position: absolute; inset: -3px; border-radius: 50%; border: 2px solid #7dd3fc; opacity: 0; animation: callme 2.4s ease-out infinite; }
@@ -272,7 +277,7 @@ footer .phonebar { font-size: clamp(22px, 3vw, 30px); }
   .badge { width: 104px; } .badge .ico { width: 78px; height: 78px; } .badge b { font-size: 13px; }
   .badge + .badge::before, .phone-line::before, .phone-line::after { display: none; }
   .phonebar { padding: 10px 32px 10px 22px; } .phonebar i { width: 44px; height: 44px; }
-  .phonebar.consult { font-size: 19px; gap: 12px; white-space: nowrap; }
+  .phonebar.consult { font-size: 18px; gap: 12px; white-space: nowrap; padding: 8px 26px 8px 8px; }
   .services, .process, .why, form { grid-template-columns: minmax(0, 1fr); }
   .svc:nth-child(5) { grid-column: auto; }
   section { padding-block: 64px; }

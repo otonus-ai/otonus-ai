@@ -7,7 +7,8 @@
 const REPO = 'otonus-ai/otonus-ai';
 const BRANCH = 'main';
 
-if (PHP_SAPI !== 'cli') { http_response_code(404); exit; }
+// Web requests are refused (the folder is also denied in .htaccess). Some hosts run cron jobs with php-cgi, so only a real web request is turned away.
+if (PHP_SAPI !== 'cli' && isset($_SERVER['REQUEST_METHOD'])) { http_response_code(404); exit; }
 $here = __DIR__;
 $site = dirname($here);
 $stateFile = "$here/state.json";

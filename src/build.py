@@ -19,5 +19,7 @@ head = """<!doctype html>
 """
 title_end = page.index("<style>")
 out = head + page[:title_end] + page[title_end:page.index("</style>") + 8] + "\n</head>\n<body>\n" + page[page.index("</style>") + 8:] + "\n</body>\n</html>\n"
+# The live page gets the full title and a canonical address; the preview keeps the short one.
+out = out.replace("<title>Otonus.ai</title>", "<title>Otonus.ai | AI Automation &amp; Intelligent Business Solutions</title>\n<link rel=\"canonical\" href=\"https://otonus.ai/\">", 1)
 open(OUT, "w").write(out)
 print("built", len(out))

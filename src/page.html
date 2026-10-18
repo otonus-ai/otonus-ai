@@ -84,7 +84,7 @@ p { margin: 0; }
 @keyframes buzz { 0%, 14%, 100% { transform: none; } 2%, 6%, 10% { transform: rotate(-12deg); } 4%, 8%, 12% { transform: rotate(12deg); } }
 
 /* nav */
-.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30; background: rgba(240,246,255,.78); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(210,226,250,.8); }
+.nav { position: sticky; top: 0; padding-top: env(safe-area-inset-top, 0px); z-index: 30; background: rgba(240,246,255,.78); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(210,226,250,.8); }
 .nav .wrap { display: flex; align-items: center; gap: 26px; padding-block: 10px; }
 .brand { display: flex; align-items: center; gap: 8px; text-decoration: none; }
 .brand img { width: 46px; height: auto; }
@@ -158,7 +158,7 @@ p { margin: 0; }
   -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 38%); mask-image: linear-gradient(180deg, transparent 0, #000 38%); }
 
 /* sections: one even gap between them; a link to a section lands just under the sticky header */
-:root { --pad: 64px; --hdr: 64px; }
+:root { --pad: 64px; --hdr: calc(64px + env(safe-area-inset-top, 0px)); }
 section { padding-block: var(--pad); scroll-margin-top: calc(var(--hdr) + 18px - var(--pad)); }
 .svc { scroll-margin-top: calc(var(--hdr) + 14px); }
 .svc.pre { transform: none; } /* fade only, so a jump to a card lands where it stays */
